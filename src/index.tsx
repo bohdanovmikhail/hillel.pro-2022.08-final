@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom/client';
 import { Provider as ReduxProvider } from 'react-redux';
 
 import store from './store';
+import theme from './shared/theme';
 import { Root } from './views';
 
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from '@mui/material';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,7 +16,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ReduxProvider store={store}>
-      <Root />
+      <ThemeProvider theme={theme}>
+        <Root />
+      </ThemeProvider>
     </ReduxProvider>
   </React.StrictMode>
 );
