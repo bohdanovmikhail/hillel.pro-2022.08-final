@@ -1,7 +1,7 @@
 import { Container } from '@mui/material';
+import { Outlet } from 'react-router-dom';
 
 import { Header } from './components/Header';
-import { AuthSignIn } from '../auth';
 
 export function Root() {
   return (
@@ -9,7 +9,7 @@ export function Root() {
     <Container>
       <Header />
 
-      <AuthSignIn />
+      <Outlet />
     </Container>
   );
 }

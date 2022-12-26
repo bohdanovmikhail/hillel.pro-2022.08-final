@@ -1,3 +1,15 @@
+import { Link } from '@mui/material';
+import { useParams } from 'react-router-dom';
+
 export function ChatRoom() {
-  return null;
+  const { roomId } = useParams();
+
+  return (
+    <div>
+      <div>
+        <Link href="..">Back</Link>
+      </div>
+      Room ID: {roomId}
+    </div>
+  );
 }
