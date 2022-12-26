@@ -15,8 +15,15 @@ import {
 // import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 import { Copyright } from '../../../shared/components';
+import { useFormData } from '../../../shared/hooks';
 
 export function AuthSignIn() {
+  const [formData,, setFormData] = useFormData({
+    email: '',
+    password: '',
+    rememberMe: false,
+  });
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -24,6 +31,13 @@ export function AuthSignIn() {
       email: data.get('email'),
       password: data.get('password'),
     });
+
+    // Or
+    console.log({
+      email: formData.email,
+      password: formData.password,
+      rememberMe: formData.rememberMe,
+    })
   };
 
   return (
@@ -53,6 +67,8 @@ export function AuthSignIn() {
             name="email"
             autoComplete="email"
             autoFocus
+            value={formData.email}
+            onChange={e => setFormData('email', e.target.value)}
           />
           <TextField
             margin="normal"
@@ -63,9 +79,17 @@ export function AuthSignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
+            value={formData.password}
+            onChange={e => setFormData('password', e.target.value)}
           />
           <FormControlLabel
-            control={<Checkbox value="remember" color="primary"/>}
+            control={(
+              <Checkbox
+                color="primary"
+                value={formData.rememberMe}
+                onChange={e => setFormData('rememberMe', e.target.checked)}
+              />
+            )}
             label="Remember me"
           />
           <Button
