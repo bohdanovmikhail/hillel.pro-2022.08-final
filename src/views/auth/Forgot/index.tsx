@@ -10,7 +10,7 @@ import {
   Typography,
   Container,
 } from '@mui/material';
-// import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 import { Copyright } from '@shared/components';
 
@@ -25,7 +25,7 @@ export function AuthForgot() {
         alignItems: 'center',
       }}>
         <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-          {/*<LockOutlinedIcon />*/}
+          <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
           Restore password

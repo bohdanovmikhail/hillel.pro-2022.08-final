@@ -1,14 +1,18 @@
-import { Container } from '@mui/material';
+import { Container, CssBaseline } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 
 import { Header } from './components/Header';
 
 export function Root() {
   return (
-    <Container>
+    <Container disableGutters>
       <Header />
 
-      <Outlet />
+      <Container>
+        <CssBaseline />
+
+        <Outlet />
+      </Container>
     </Container>
   );
 }
