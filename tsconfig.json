@@ -21,6 +21,11 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
+      // Useful aliases
+      "@constants": ["src/core/constants"],
+      "@store/*": ["src/core/store/*"],
+
+      // Main folders
       "@core/*": ["src/core/*"],
       "@shared/*": ["src/shared/*"],
       "@views/*": ["src/views/*"]
