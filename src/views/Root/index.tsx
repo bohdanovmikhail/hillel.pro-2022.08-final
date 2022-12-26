@@ -5,6 +5,7 @@ import { AuthSignIn } from '../auth';
 
 export function Root() {
   return (
+    // eslint-disable-next-line react/react-in-jsx-scope
     <Container>
       <Header />
 

@@ -18,7 +18,7 @@ import { Copyright } from '../../../shared/components';
 import { useFormData } from '../../../shared/hooks';
 
 export function AuthSignIn() {
-  const [formData,, setFormData] = useFormData({
+  const [formData, , setFormData] = useFormData({
     email: '',
     password: '',
     rememberMe: false,
@@ -37,7 +37,7 @@ export function AuthSignIn() {
       email: formData.email,
       password: formData.password,
       rememberMe: formData.rememberMe,
-    })
+    });
   };
 
   return (

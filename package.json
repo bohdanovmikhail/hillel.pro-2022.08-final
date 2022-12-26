@@ -30,6 +30,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "lint": "node_modules/.bin/eslint src/**",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
