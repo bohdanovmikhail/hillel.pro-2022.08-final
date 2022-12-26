@@ -4,9 +4,9 @@ import { Provider as ReduxProvider } from 'react-redux';
 import { ThemeProvider } from '@mui/material';
 import { RouterProvider } from 'react-router-dom';
 
-import store from '@store';
-import theme from '@core/theme';
 import routes from '@core/router';
+import store from '@core/store';
+import theme from '@core/theme';
 
 import reportWebVitals from './reportWebVitals';
 
