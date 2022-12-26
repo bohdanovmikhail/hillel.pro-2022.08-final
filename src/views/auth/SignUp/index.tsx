@@ -28,15 +28,13 @@ export function AuthSignUp() {
 
   return (
     <Container component="main" maxWidth="xs">
-      <CssBaseline/>
-      <Box
-        sx={{
-          marginTop: 8,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
+      <CssBaseline />
+      <Box sx={{
+        marginTop: 8,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}>
         <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
           {/*<LockOutlinedIcon/>*/}
         </Avatar>

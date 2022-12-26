@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
 
-const initial = { a: 123, b: '123' };
-const reducer = (state = initial) => state;
+import featureReducer from './__feature/reducer';
 
-const rootReducer = combineReducers({ reducer });
+const rootReducer = combineReducers({
+  feature: featureReducer,
+});
 
 export default rootReducer;
 
