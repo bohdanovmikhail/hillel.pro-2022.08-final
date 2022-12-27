@@ -1,11 +1,11 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
 
 import { Root } from '@views/Root';
 import { ChatList, ChatRoom } from '@views/chat';
 import { AuthSignIn, AuthSignUp, AuthForgot } from '@views/auth';
 import { UserProfile } from '@views/user';
 
-export default createBrowserRouter([
+export default createHashRouter([
   {
     path: '/',
     element: <Root />,
