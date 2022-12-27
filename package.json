@@ -34,10 +34,11 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "build:gp": "ENV=gh-pages craco build",
     "lint": "node_modules/.bin/eslint src/**",
     "test": "craco test",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm run build:gp",
+    "deploy": "gh-pages -d build:gp"
   },
   "eslintConfig": {
     "extends": [
