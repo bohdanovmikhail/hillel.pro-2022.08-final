@@ -24,6 +24,7 @@
       // Useful aliases
       "@constants": ["src/core/constants"],
       "@store/*": ["src/core/store/*"],
+      "@models": ["src/core/models"],
 
       // Main folders
       "@core/*": ["src/core/*"],
