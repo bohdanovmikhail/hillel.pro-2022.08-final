@@ -22,7 +22,8 @@
   "rules": {
     "indent": [
       "error",
-      2
+      2,
+      { "SwitchCase": 1 }
     ],
     "linebreak-style": [
       "error",
@@ -37,6 +38,7 @@
       "always"
     ],
     "react/react-in-jsx-scope": 0,
-    "react/display-name": 0
+    "react/display-name": 0,
+    "@typescript-eslint/no-explicit-any": 0
   }
 }
