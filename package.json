@@ -1,7 +1,6 @@
 {
   "name": "online_chat",
   "version": "0.1.0",
-  "homepage": "https://bohdanovmikhail.github.io/hillel.pro-2022.08-final/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -17,6 +16,7 @@
     "@types/react-dom": "^18.0.10",
     "@types/react-redux": "^7.1.24",
     "@types/redux": "^3.6.0",
+    "@types/redux-logger": "^3.0.9",
     "@types/redux-thunk": "^2.1.0",
     "@types/socket.io-client": "^3.0.0",
     "craco": "^0.0.3",
@@ -28,6 +28,7 @@
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
+    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.2",
     "socket.io-client": "^4.5.4",
     "typescript": "^4.9.4",
