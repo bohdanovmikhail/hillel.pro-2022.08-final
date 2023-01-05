@@ -7,7 +7,8 @@ module.exports = {
       '@core': path.resolve(__dirname, 'src/core'),
       '@constants': path.resolve(__dirname, 'src/core/constants'),
       '@store': path.resolve(__dirname, 'src/core/store'),
-      '@models': path.resolve(__dirname, 'src/core/models'),
+      '@models': path.resolve(__dirname, 'src/core/models/index'),
+      '@repositories': path.resolve(__dirname, 'src/core/repositories'),
 
       '@shared': path.resolve(__dirname, 'src/shared'),
       '@views': path.resolve(__dirname, 'src/views'),

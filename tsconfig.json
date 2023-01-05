@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
     "target": "es5",
     "lib": [
       "dom",
@@ -24,7 +25,8 @@
       // Useful aliases
       "@constants": ["src/core/constants"],
       "@store/*": ["src/core/store/*"],
-      "@models": ["src/core/models"],
+      "@models": ["src/core/models/index"],
+      "@repositories/*": ["src/core/repositories/*"],
 
       // Main folders
       "@core/*": ["src/core/*"],
