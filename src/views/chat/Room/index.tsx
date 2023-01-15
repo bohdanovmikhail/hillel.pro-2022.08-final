@@ -1,11 +1,24 @@
+import { useState } from 'react';
 import { Link } from '@mui/material';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { faker } from '@faker-js/faker';
 
 import { Message } from './components/Message';
+import { IState } from '@core/store';
+import { messagesSend, messagesReceive } from '@store/messages';
+import { MessageModel } from '@models';
 
-function Room() {
+function Room({ messages, send }: IProps) {
+  const [text, setText] = useState('');
   const { roomId } = useParams();
+
+  const sendHandler = () => {
+    if (text) {
+      send(text);
+      setText('');
+    }
+  };
 
   return (
     <div>
@@ -14,36 +27,41 @@ function Room() {
       </div>
       Room ID: {roomId}
 
-      <Message
-        avatar=""
-        messages={[
-          'Hi Jenny, How r u today?',
-          'Did you train yesterday',
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat lacus laoreet non curabitur gravida.',
-        ]}
-      />
+      {messages.map((message, index) => (
+        <Message
+          key={index}
+          itsMe={message.fromUserId === '1111'}
+          avatar=""
+          messages={[message.text]}
+        />
+      ))}
 
-      <Message
-        itsMe
-        avatar=""
-        messages={[
-          'Great! What\'s about you?',
-          'Of course I did. Speaking of which check this out',
-        ]}
-      />
-
-      <Message
-        avatar=""
-        messages={[
-          'Im good.',
-          'See u later.',
-        ]}
-      />
+      <input value={text} onChange={e => setText(e.target.value)} />
+      <button onClick={sendHandler}>Send</button>
     </div>
   );
 }
 
-const mapState = () => ({});
-const mapDispatch = {};
+const mapState = (state: IState) => ({
+  messages: state.messages.list,
+});
 
-export default connect()(Room);
+const mapDispatch = (d: any) => ({
+  send: (text: string) => d((dispatch: any) => {
+    dispatch(messagesSend(text));
+
+    setTimeout(() => {
+      dispatch(messagesReceive(faker.lorem.text()));
+    }, 1000);
+    setTimeout(() => {
+      dispatch(messagesReceive(faker.lorem.text()));
+    }, 3000);
+  }),
+});
+
+export default connect(mapState, mapDispatch)(Room);
+
+interface IProps {
+  messages: MessageModel[];
+  send: (text: string) => void;
+}

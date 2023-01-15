@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Avatar, Box, IconButton, Menu, MenuItem, Tooltip, Typography } from '@mui/material';
 
-import { ActionOrPath, useNavi } from '@shared/hooks';
+// import { ActionOrPath } from '@shared/hooks';
 
 export function UserMenu({ items }: IProps) {
-  const goTo = useNavi();
+  // const goTo = useNavi();
 
   // const [anchorElUser, setAnchorElUser] = useState(null);
 
@@ -39,7 +39,7 @@ export function UserMenu({ items }: IProps) {
         open={false}
       >
         {items.map((item, index) => (
-          <MenuItem key={index} onClick={goTo(item.action)}>
+          <MenuItem key={index}>
             <Typography textAlign="center">{item.title}</Typography>
           </MenuItem>
         ))}
@@ -54,5 +54,5 @@ interface IProps {
 
 interface IUserMenuItem {
   title: string;
-  action: ActionOrPath;
+  // action: ActionOrPath;
 }
